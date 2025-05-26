@@ -1,5 +1,6 @@
 import allure
 import data
+import urls
 from locators.main_functionality_locators import MainFunctionalityLocators
 from locators.order_feed_locators import OrderFeedLocators
 from pages.base_page import BasePage
@@ -68,7 +69,7 @@ class OrderFeedPage(BasePage):
 
     @allure.step("Открытие нового окна с URL: {url}")
     def open_new_window_for_check(self):
-        self.driver.execute_script(f"window.open('{data.ORDER_FEED}', '_blank')")
+        self.open_new_window(urls.ORDER_FEED)
 
     @allure.step("Получение номера заказа")
     def get_order_number(self):

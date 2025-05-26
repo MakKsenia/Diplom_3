@@ -8,6 +8,5 @@ class PasswordRecoveryLocators:
     RESET_PASSWORD_PASSWORD_INPUT = (By.NAME, 'Пароль')  # Поле ввода Пароля на странице послеввода Email и нажатия кнопки "Восстановить"
     ICON_ACTION_BUTTON = (By.XPATH, '//div[@class="input__icon input__icon-action"]/*[local-name() = "svg"]') #Кнопка показать/скрыть пароль
     ACTIVE_PASSWORD_FIELD_FRAME  = (By.XPATH, '//label[text()="Пароль"]/parent::div[contains(@class, "input_status_active")]') #Поле пароль активное(подсвечено) после клика по кнопке показать/скрыть
-
     OVERLAY = By.XPATH, ".//div[contains(@class, 'Modal_modal_overlay__x2ZCr')]/parent::div"
 

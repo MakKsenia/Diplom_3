@@ -1,7 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 import pytest
 from selenium import webdriver
-from data import MAIN_URL
+from urls import MAIN_URL
 
 
 @pytest.fixture(params=["chrome", "firefox"])

@@ -19,7 +19,7 @@ class BasePage:
         drag_and_drop(self.driver, source, target)
 
     @allure.step('Запрашиваем URL текущей страницы')
-    def get_current_url(self, url):
+    def get_current_url(self):
         return self.driver.current_url
 
     @allure.step('Переключаем драйвер')
@@ -54,6 +54,7 @@ class BasePage:
     def scroll(self, locator):
         element = self.driver.find_element(*locator)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
 
     @allure.step("Получить текст элемента")
     def get_text_on_element(self, locator, timeout=10):
@@ -119,3 +120,4 @@ class BasePage:
     @allure.step("Переключение на окно")
     def switch_to_window(self, window_handle):
         self.driver.switch_to.window(window_handle)
+

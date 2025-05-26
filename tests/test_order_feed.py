@@ -18,7 +18,7 @@ class TestOrderFeedPage:
         page_element.main_page_loading_wait()
         page_element.first_order_click()
         page_element.main_page_loading_wait()
-        assert page_element.is_modal_order_displayed
+        assert page_element.is_modal_order_displayed()
 
     @allure.title('Проверка, что заказы пользователя из раздела «История заказов» отображаются на странице «Лента заказов')
     def test_user_orders_history_visible_in_order_feed(self, driver):

@@ -1,8 +1,8 @@
 import allure
 
+import urls
 from pages.password_recovery_page import PasswordRecoveryPage
 from data import user_data
-import data
 
 @allure.title('Проверка восстановления пароля')
 class TestPasswordRecoveryPage:
@@ -14,7 +14,7 @@ class TestPasswordRecoveryPage:
         password_recovery_page.main_page_loading_wait()
         password_recovery_page.password_recovery_button_click()
         password_recovery_page.main_page_loading_wait()
-        assert password_recovery_page.get_current_url() == data.FORGOT_PASSWORD_PAGE
+        assert password_recovery_page.get_current_url() == urls.FORGOT_PASSWORD_PAGE
 
     @allure.title('Проверка "Ввод почты и клик по кнопке «Восстановить»"')
     def test_input_email_and_go_to_recovery_button(self, driver):
@@ -27,7 +27,7 @@ class TestPasswordRecoveryPage:
         password_recovery_page.main_page_loading_wait()
         password_recovery_page.restore_button_click()
         password_recovery_page.main_page_loading_wait()
-        assert password_recovery_page.get_current_url() == data.RESET_PASSWORD_PAGE
+        assert password_recovery_page.get_current_url() == urls.RESET_PASSWORD_PAGE
 
     @allure.title('Проверка "Клик по кнопке показать/скрыть пароль делает поле активным — подсвечивает его"')
     def test_active_password_field_frame(self, driver):

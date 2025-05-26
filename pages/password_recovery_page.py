@@ -51,4 +51,4 @@ class PasswordRecoveryPage(BasePage):
 
     @allure.step('Запрашиваем URL текущей страницы')
     def get_current_url(self):
-        return self.driver.current_url
+        return super().get_current_url()

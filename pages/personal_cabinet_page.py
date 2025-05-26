@@ -10,8 +10,7 @@ class PersonalCabinetPage(BasePage):
 
     @allure.step('Запрашиваем URL текущей страницы')
     def get_current_url(self):
-        return self.driver.current_url
-
+        return super().get_current_url()
 
     @allure.step('Нажимаем на кнопку Личный кабинет')
     def personal_cabinet_click(self):
@@ -33,9 +32,7 @@ class PersonalCabinetPage(BasePage):
 
     @allure.step('Скроллим на до элемента Личный кабинет по локатору')
     def scroll_personal_cabinet(self):
-        element = self.driver.find_element(PersonalCabinetLocators.PERSONAL_ACCOUNT)
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
-
+        self.scroll(PersonalCabinetLocators.PERSONAL_ACCOUNT)
 
     @allure.step('Ожидаем появления кнопки история заказов')
     def wait_for_element_order_history(self):
@@ -57,4 +54,5 @@ class PersonalCabinetPage(BasePage):
     def get_last_order_in_history(self):
         self.wait_until_visible(PersonalCabinetLocators.ORDER_HISTORY_LIST)
         return self.get_text(PersonalCabinetLocators.LAST_ORDER_NUMBER)
+
 
